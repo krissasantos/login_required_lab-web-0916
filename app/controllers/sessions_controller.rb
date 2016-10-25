@@ -1,25 +1,19 @@
 class SessionsController < ApplicationController
 
-  def new
-  end
-
-
-    def create
-      session[:name] = params[:name]
-
-      # if session[:name]
-      #   login
-      # else
-        redirect_to '/login'
-      # end
-
+    def new
     end
 
-    def index
+    def create
+      if !params[:name] || params[:name].empty?
+          return redirect_to '/login'
+      else
+        session[:name] = params[:name]
+        redirect_to '/logged'
+      end
     end
 
     def destroy
       session[:name] = nil
-      redirect_to 'index'
+      redirect_to '/login'
     end
 end

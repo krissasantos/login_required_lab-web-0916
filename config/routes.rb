@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
-  post '/sessions' => 'sessions#create'
-  get '/sessions' => 'sessions#index'
-  post '/sessions' => 'sessions#destroy'
+  post '/login' => 'sessions#create'
+
+  get 'logged' => 'sessions#show'
+  post '/logout' => 'sessions#destroy' #how would it know the diff between
+
+  get '/secret' => 'secrets#show'
   get '/login' => 'secrets#show'
-  
 
-
-  # get '/logout' => 'sessions#destroy'
 
 end
 
