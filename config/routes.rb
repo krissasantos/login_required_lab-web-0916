@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy' #how would it know the diff between
 
   get '/secret' => 'secrets#show'
-  get '/login' => 'secrets#show'
+  # get '/login' => 'secrets#show'
 
 
 end
